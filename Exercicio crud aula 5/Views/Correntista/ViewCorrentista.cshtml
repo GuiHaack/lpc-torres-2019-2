@@ -1,0 +1,20 @@
+﻿@model aula05_exercicio_static.Models.CorrentistaModel
+
+@{
+    ViewData["Title"] = "Detalhes Correntista";
+}
+
+<h2 class="text-center">Detalhes Correntista</h2>
+
+<div class="form-group col-12 col-sm-8 col-md-6 mx-auto">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.nome)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control", @disabled = true } })
+    </div>
+</div>
+
+<div class="d-block text-center">
+    @Html.ActionLink("Voltar para listagem", "Index", null, null, new { @class = "mt-4 d-block" })
+</div>

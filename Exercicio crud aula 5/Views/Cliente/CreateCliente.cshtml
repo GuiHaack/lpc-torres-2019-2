@@ -1,0 +1,40 @@
+﻿@model aula05_exercicio_static.Models.ClienteModel
+
+@{
+    ViewData["Title"] = "Adicionar Cliente";
+}
+
+<h2 class="text-center">Adicionar Cliente</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+        <div class="form-group col-12 col-sm-8 col-md-6 mx-auto">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.nome)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome do Cliente", @required="true", @minlength=5 } })
+                <small id="emailHelp" class="form-text text-muted">@Html.ValidationMessageFor(model => model.nome)</small>
+            </div>
+        </div>
+
+        <div class="form-group col-12 col-sm-8 col-md-6 mx-auto">
+            <div class="editor-label">@Html.LabelFor(model => model.cpf)</div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { @class = "form-control", @placeholder = "CPF do Cliente", @required="true", @minlength=11 } })
+                <small id="emailHelp" class="form-text text-muted">@Html.ValidationMessageFor(model => model.cpf)</small>
+            </div>
+        </div>
+
+        <div class="d-block text-center">
+            <button type="submit" class="btn btn-primary d-block my-4 mx-auto">Adicionar</button>
+
+            @Html.ActionLink("Voltar para listagem", "Index", null, null, new { @class = "mt-2 d-block" })
+        </div>
+    }
+
+<div>
+    
+</div>

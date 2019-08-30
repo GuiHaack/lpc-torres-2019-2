@@ -1,0 +1,34 @@
+﻿@model IEnumerable<aula05_exercicio_static.Models.ClienteModel>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h2 class="text-center">Clientes</h2>
+<p class="d-block text-right">
+    @Html.ActionLink("Adicionar Cliente", "CreateCliente", new {}, new { @class = "btn btn-outline-info" })
+</p>
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-center">@Html.DisplayNameFor(model => model.id)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.nome)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.cpf)</th>
+            <th class="text-center">Ações</th>
+        </tr>
+    </thead>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.id)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.nome)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.cpf)</td>
+        <td class="text-center">
+            @Html.ActionLink("Ver", "ViewCliente",new{ id=item.id }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Editar", "UpdateCliente",new{ id=item.id }, new { @class = "btn btn-primary mx-2" })
+            @Html.ActionLink("Deletar", "DeleteCliente", new{ id=item.id }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+</table>

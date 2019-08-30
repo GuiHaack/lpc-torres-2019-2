@@ -1,0 +1,32 @@
+﻿@model IEnumerable<aula05_exercicio_static.Models.CorrentistaModel>
+
+@{
+    ViewData["Title"] = "Correntistas";
+}
+
+<h2 class="text-center">Correntistas</h2>
+<p class="d-block text-right">
+    @Html.ActionLink("Adicionar Correntista", "CreateCorrentista", new {}, new { @class = "btn btn-outline-info" })
+</p>
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-center">@Html.DisplayNameFor(model => model.id)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.nome)</th>
+            <th class="text-center">Ações</th>
+        </tr>
+    </thead>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.id)</td>
+        <td class="text-center">@Html.DisplayFor(modelItem => item.nome)</td>
+        <td class="text-center">
+            @Html.ActionLink("Ver", "ViewCorrentista",new{ id=item.id }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Editar", "UpdateCorrentista",new{ id=item.id }, new { @class = "btn btn-primary mx-2" })
+            @Html.ActionLink("Deletar", "DeleteCorrentista", new{ id=item.id }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+</table>
