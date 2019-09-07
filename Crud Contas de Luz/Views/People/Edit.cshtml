@@ -1,0 +1,56 @@
+@model aula06CrudPeople.Models.Person
+
+<div class="form-horizontal">
+    <form action="Edit" method="Post">
+
+        <div class="form-group">
+            <label>Id</label>
+            <input  class="form-control"
+                    type="text" name="id"
+                    value = "@Model.id"/>
+        </div>
+
+        <div class="form-group">
+            <label>dataLeitura</label>
+            <input  class="form-control"
+                    type="text" name="dataLeitura"
+                    value="@Model.dataLeitura"/>
+        </div>
+
+        <div class="form-group">
+            <label>NumLeitura</label>
+            <input  class="form-control"
+                    type="text" name="NumLeitura"
+                    value = "@Model.NumLeitura"/>
+        </div>
+        <div class="form-group">
+            <label>kwGasto</label>
+            <input  class="form-control"
+                    type="text" name="kwGasto"
+                    value = "@Model.kwGasto"/>
+        </div>
+        <div class="form-group">
+            <label>valorPagar </label>
+            <input  class="form-control"
+                    type="text" name="valorPagar"
+                    value = "@Model.valorPagar"/>
+        </div>
+        <div class="form-group">
+            <label>dataPagamento </label>
+            <input  class="form-control"
+                    type="text" name="dataPagamento"
+                    value = "@Model.dataPagamento"/>
+        </div>
+        <div class="form-group">
+            <label>mediaConsumo </label>
+            <input  class="form-control"
+                    type="text" name="mediaConsumo"
+                    value = "@Model.mediaConsumo"/>
+        </div>
+
+
+        <input  class="btn btn-primary" 
+                type="submit" value="Salvar"/>
+
+    </form>
+</div>
